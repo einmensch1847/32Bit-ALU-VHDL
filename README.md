@@ -63,10 +63,6 @@ The ALU operation is controlled by a 2-bit select line. The current mapping is:
 *   Add a testbench for simulation in ModelSim/Questa.
 *   Extend to support shift operations.
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/einmensch1847/32Bit-ALU-VHDL/issues).
-
 ## 📧 Contact
 
 Project Maintainer: [Sadra Ghofran](https://github.com/einmensch1847)  
