@@ -1,2 +1,98 @@
-# 32Bit-ALU-VHDL
-VHDL
+32-Bit ALU (Arithmetic Logic Unit) in VHDL
+https://img.shields.io/badge/VHDL-IEEE--1076-blue
+https://img.shields.io/badge/Target-Altera-orange
+https://img.shields.io/badge/License-MIT-yellow.svg
+
+A complete 32-bit Arithmetic Logic Unit (ALU) designed and implemented in VHDL. This project was developed using Altera Quartus II 13.0sp1 and is intended for FPGA implementation. The ALU supports basic arithmetic, logical, and comparison operations.
+
+✨ Features
+32-bit Architecture: Full 32-bit data path.
+
+Supported Operations:
+
+Arithmetic: Addition, Subtraction
+
+Logical: AND, OR, XOR
+
+Comparison: Equality, Less Than (via subtraction)
+
+VHDL Implementation: Synthesizable VHDL code (IEEE 1076).
+
+Modular Design: Includes separate components for AND, ADD/SUB, and a final MUX for result selection.
+
+Altera Compatible: Designed and tested with Altera Quartus II 13.0sp1.
+
+🛠️ Project Structure
+text
+32bit_ALU/
+├── 32bit_ALU.bdf          # Top-level Block Diagram File
+├── 32bit_ALU.qpf           # Quartus II Project File
+├── 32bit_ALU.qsf           # Quartus II Settings File
+├── lpm_add_sub0.vhd        # VHDL for Adder/Subtractor component
+├── lpm_mux0.vhd            # VHDL for Multiplexer component
+├── 32bit_and.bsf           # Block Symbol File for AND gate
+├── db/                      # Quartus II intermediate database (generated)
+├── output_files/            # Compiled output (reports, programming files)
+│   ├── 32bit_ALU.map.rpt   # Map stage report
+│   └── 32bit_ALU.flow.rpt  # Full compilation flow report
+└── README.md               # This file
+🚀 Getting Started
+Prerequisites
+Software: Altera Quartus II 13.0sp1 or later (Intel FPGA tools).
+
+Knowledge: Basic understanding of VHDL and digital logic design.
+
+How to Use
+Clone the repository:
+
+sh
+git clone https://github.com/einmensch1847/32Bit-ALU-VHDL.git
+Open the project in Quartus II:
+
+Launch Quartus II.
+
+Select File -> Open Project and navigate to 32bit_ALU.qpf.
+
+Compile the project:
+
+Click the Start Compilation button or select Processing -> Start Compilation.
+
+Review the results:
+
+Check the compilation report in the output_files/ directory.
+
+🧠 Design Overview
+The ALU is constructed using three main stages:
+
+Logical Unit: Performs bitwise AND, OR, and XOR operations (though currently only AND module is present, others can be added).
+
+Arithmetic Unit: Uses an lpm_add_sub0 megafunction to perform both addition and subtraction based on a select input.
+
+Output Selector: A multiplexer (lpm_mux0) chooses the final result from the different operation outputs based on a 2-bit opcode.
+
+⚙️ Configuration
+The ALU operation is controlled by a 2-bit select line. The current mapping is:
+
+Select (S1 S0)	Operation	Description
+0 0	A AND B	Bitwise AND
+0 1	A + B	Addition
+1 0	A - B	Subtraction
+1 1	(Reserved)	For future use
+📈 Future Improvements
+Add VHDL source files for all logical operations (OR, XOR).
+
+Implement a status register with flags (Zero, Carry, Overflow).
+
+Add a testbench for simulation in ModelSim/Questa.
+
+Extend to support shift operations.
+
+📜 License
+This project is open-source and available under the MIT License. See the LICENSE file for more information.
+
+🤝 Contributing
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
+
+📧 Contact
+Project Maintainer: Sadra Ghofran
+Personal Website: SadraGhofran.ir
