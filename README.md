@@ -4,7 +4,6 @@
 
 [![VHDL](https://img.shields.io/badge/VHDL-IEEE--1076-blue)](https://en.wikipedia.org/wiki/VHDL)
 [![FPGA](https://img.shields.io/badge/Target-Altera-orange)](https://www.intel.com/content/www/us/en/products/programmable.html)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A complete 32-bit Arithmetic Logic Unit (ALU) designed and implemented in VHDL. This project was developed using Altera Quartus II 13.0sp1 and is intended for FPGA implementation. The ALU supports basic arithmetic, logical, and comparison operations.
 
@@ -18,23 +17,6 @@ A complete 32-bit Arithmetic Logic Unit (ALU) designed and implemented in VHDL. 
 *   **VHDL Implementation**: Synthesizable VHDL code (IEEE 1076).
 *   **Modular Design**: Includes separate components for AND, ADD/SUB, and a final MUX for result selection.
 *   **Altera Compatible**: Designed and tested with Altera Quartus II 13.0sp1.
-
-## 🛠️ Project Structure
-
-```
-32bit_ALU/
-├── 32bit_ALU.bdf          # Top-level Block Diagram File
-├── 32bit_ALU.qpf           # Quartus II Project File
-├── 32bit_ALU.qsf           # Quartus II Settings File
-├── lpm_add_sub0.vhd        # VHDL for Adder/Subtractor component
-├── lpm_mux0.vhd            # VHDL for Multiplexer component
-├── 32bit_and.bsf           # Block Symbol File for AND gate
-├── db/                      # Quartus II intermediate database (generated)
-├── output_files/            # Compiled output (reports, programming files)
-│   ├── 32bit_ALU.map.rpt   # Map stage report
-│   └── 32bit_ALU.flow.rpt  # Full compilation flow report
-└── README.md               # This file
-```
 
 ## 🚀 Getting Started
 
@@ -80,10 +62,6 @@ The ALU operation is controlled by a 2-bit select line. The current mapping is:
 *   Implement a status register with flags (Zero, Carry, Overflow).
 *   Add a testbench for simulation in ModelSim/Questa.
 *   Extend to support shift operations.
-
-## 📜 License
-
-This project is open-source and available under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
 ## 🤝 Contributing
 
